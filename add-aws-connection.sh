@@ -10,8 +10,7 @@ if [ ! -z "$FAIL" ]; then exit 1; fi
 
 if [ -z "$AWS_DEFAULT_REGION" ]; then AWS_DEFAULT_REGION=us-east-2; fi
 
-PROJNAME=$(basename $PWD)
-SCHEDULER=$(docker ps | grep $PROJNAME | grep scheduler- | cut -f1 -d' ')
+SCHEDULER=$(docker ps | grep airflow | grep scheduler- | cut -f1 -d' ')
 
 docker exec -it $SCHEDULER airflow connections add $CONN_NAME \
     --conn-json "{
