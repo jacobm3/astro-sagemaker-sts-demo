@@ -105,7 +105,7 @@ def _get_activity(day_name) -> str:
     schedule_interval="@daily",
     # Default settings applied to all tasks within the DAG; can be overwritten at the task level.
     default_args={
-        "owner": "community", # This defines the value of the "owner" column in the DAG view of the Airflow UI
+        "owner": "jmartinson@astronomer.io", # This defines the value of the "owner" column in the DAG view of the Airflow UI
         "retries": 2, # If a task fails, it will retry 2 times.
         "retry_delay": timedelta(minutes=3), # A task that fails will wait 3 minutes to retry.
     },

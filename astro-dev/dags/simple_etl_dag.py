@@ -7,7 +7,7 @@ from airflow.decorators import dag, task # DAG and task decorators for interfaci
 @dag(
     # This defines how often your DAG will run, or the schedule by which your DAG runs. In this case, this DAG
     # will run daily
-    schedule_interval="@daily",
+    schedule="@daily",
     # This DAG is set to run for the first time on January 1, 2021. Best practice is to use a static
     # start_date. Subsequent DAG runs are instantiated based on scheduler_interval
     start_date=datetime(2021, 1, 1),
@@ -16,11 +16,11 @@ from airflow.decorators import dag, task # DAG and task decorators for interfaci
     # run will be for the next 30 mins, per the schedule_interval
     catchup=False,
     default_args={
-        "retries": 2, # If a task fails, it will retry 2 times.
+        "retries": 0, # If a task fails, it will retry 2 times.
         "owner": "jmartinson@astronomer.io",
     },
-    tags=['example']) # If set, this tag is shown in the DAG view of the Airflow UI
-def example_dag_basic():
+    tags=['ETL']) # If set, this tag is shown in the DAG view of the Airflow UI
+def simple_etl_dag():
     """
     ### Basic ETL Dag
     This is a simple ETL data pipeline example that demonstrates the use of
@@ -53,6 +53,7 @@ def example_dag_basic():
 
         for value in order_data_dict.values():
             total_order_value += value
+        total_order_value = total_order_value / 0
 
         return {"total_order_value": total_order_value}
 
@@ -70,4 +71,4 @@ def example_dag_basic():
     order_summary = transform(order_data)
     load(order_summary["total_order_value"])
 
-example_dag_basic = example_dag_basic()
+simple_etl_dag = simple_etl_dag()
