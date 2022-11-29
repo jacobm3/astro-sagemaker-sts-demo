@@ -21,7 +21,7 @@ terraform apply
 cd ..
 ```
 
-1. Start the Astro dev environment:
+2. Start the Astro dev environment:
 
 ```
 cd astro-dev
@@ -29,7 +29,7 @@ astro dev start
 cd ..
 ```
 
-1. Inject the aws-sagemaker connection and required variables.
+3. Inject the aws-sagemaker connection and required variables.
 
 ```
 ./add-vars-conn.sh
