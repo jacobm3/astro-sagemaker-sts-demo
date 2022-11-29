@@ -8,6 +8,12 @@ This tutorial demonstrates how to orchestrate a full ML pipeline including creat
 
 Terraform code is provided to build the required AWS resources and a helper script is available to automatically inject an Airflow connection and variables, if you have AWS credentials in your environment (AWS_SECRET_ACCESS_KEY, AWS_ACCESS_KEY_ID, AWS_SESSION_TOKEN).
 
+# Requirements
+
+1. AWS credentials and STS token with permissions to create an S3 storage bucket, an IAM role and policy for SageMaker.
+2. The Astronomer CLI already installed.
+3. Terraform already installed.
+
 # Steps
 
 1. Build resources with Terraform:
