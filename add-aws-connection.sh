@@ -12,7 +12,7 @@ if [ -z "$AWS_DEFAULT_REGION" ]; then AWS_DEFAULT_REGION=us-east-2; fi
 
 SCHEDULER=$(docker ps | grep airflow | grep scheduler- | cut -f1 -d' ')
 
-docker exec -it $SCHEDULER airflow connections add $CONN_NAME \
+docker exec -it -e PYTHONWARNINGS=ignore $SCHEDULER airflow connections add $CONN_NAME \
     --conn-json "{
         \"conn_type\": \"aws\",
         \"login\": \"$AWS_ACCESS_KEY_ID\",
