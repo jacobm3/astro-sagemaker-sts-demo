@@ -53,7 +53,7 @@ def simple_etl_dag():
 
         for value in order_data_dict.values():
             total_order_value += value
-        total_order_value = total_order_value / 2
+        total_order_value = total_order_value / 3
         
 
         return {"total_order_value": total_order_value}
