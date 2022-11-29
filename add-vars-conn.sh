@@ -22,7 +22,7 @@ docker exec -it -e PYTHONWARNINGS=ignore $SCHEDULER airflow connections add $CON
         \"extra\": {\"aws_session_token\": \"$AWS_SESSION_TOKEN\", \"region_name\": \"$AWS_DEFAULT_REGION\" } }"
 
 # put sagemaker_role_name and bucket_id in env vars
-cd terraform
+cd terraform-sagemaker-pipeline
 eval $( terraform output | sed 's/ = /=/' )
 
 echo
