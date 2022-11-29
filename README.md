@@ -2,7 +2,6 @@
 
 This repo is the code accompanying Astronomer's [SageMaker and Airflow learn guide](https://docs.astronomer.io/learn/airflow-sagemaker).
 
-
 Amazon SageMaker is a comprehensive AWS machine learning (ML) service that is frequently used by data scientists to develop and deploy ML models at scale. With Airflow, you can orchestrate every step of your SageMaker pipeline, integrate with services that clean your data, and store and publish your results using only Python code.
 
 This tutorial demonstrates how to orchestrate a full ML pipeline including creating, training, and testing a new SageMaker model. This use case is relevant if you want to automate the model training, testing, and deployment components of your ML pipeline.
