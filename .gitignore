@@ -45,5 +45,3 @@ override.tf.json
 secret.tfvars
 terraform.rc
 tf.plan.out
-
-astro-dev
